@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.util.List;
 
 public class FirstTest {
 
@@ -120,6 +121,38 @@ public class FirstTest {
                 10);
     }
 
+    @Test
+    public void testForEx3() {
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "Cannot find 'Search Wikipedia'");
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Petrozavodsk",
+                "Cannot find search input");
+
+        assertSearchResultIsMoreOrEqualThan(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[contains(@text,'Petrozavodsk')]"),
+                "Result is empty",
+                1,
+                30);
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "Cannot find X to cancel search");
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/search_empty_message"),
+                "The search result was not lost",
+                30);
+
+        waitForElementNotPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[contains(@text,'Petrozavodsk')]"),
+                "Result is not empty",
+                5);
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -175,5 +208,20 @@ public class FirstTest {
                 error_message,
                 expected_text,
                 text);
+    }
+
+    private List<WebElement> waitForElementsPresent(By by, String error_message, long timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+    }
+
+    private void assertSearchResultIsMoreOrEqualThan(By by, String error_message, int compared, long timeoutInSeconds) {
+        List<WebElement> result_of_searching = waitForElementsPresent(
+                by,
+                "Cannot find result of searching",
+                timeoutInSeconds);
+        int size = result_of_searching.size();
+        Assert.assertTrue(error_message, size >= compared);
     }
 }
