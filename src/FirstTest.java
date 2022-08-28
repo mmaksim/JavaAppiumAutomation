@@ -115,7 +115,7 @@ public class FirstTest {
     public void testSearchFieldHasText() {
         assertElementHasText(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Search Wikipedia1",
+                "Search Wikipedia",
                 "We see unexpected text",
                 10);
     }
