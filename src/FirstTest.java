@@ -1,4 +1,5 @@
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
@@ -214,8 +215,6 @@ public class FirstTest {
                 "Cannot find more button",
                 15);
 
-        Thread.sleep(2000);
-
         waitForElementAndClick(
                 By.xpath("//*[@text='Add to reading list']"),
                 "Cannot find option 'Add to reading list'",
@@ -408,6 +407,149 @@ public class FirstTest {
                 By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Object-oriented programming language' after returning Background",
                 30);
+    }
+
+    @Test
+    public void testSaveTwoArticles() {
+
+        By first_article = By.xpath("//*[@text='Dead Space']");
+        By second_article = By.xpath("//*[@text='Dead space (physiology)']");
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia'");
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Dead space",
+                "Cannot find search input");
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Video game series']"),
+                "Cannot find 'Object-oriented programming language'",
+                30);
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find title of article",
+                30);
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find more button",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='Add to reading list']"),
+                "Cannot find option 'Add to reading list'",
+                15);
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/onboarding_button"),
+                "Cannot find button 'GOT IT'",
+                15);
+
+        waitForElementAndClear(
+                By.id("org.wikipedia:id/text_input"),
+                "Cannot find input 'Name of the list'",
+                15);
+
+        String name_of_folder = "Dead space folder";
+
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/text_input"),
+                name_of_folder,
+                "Cannot put text to input 'Name of the list'",
+                5);
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='OK']"),
+                "Cannot press OK button",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot press close button",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia'");
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Dead space",
+                "Cannot find search input");
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='Air that does not take part in gas exchange']"),
+                "Cannot find 'Air that does not take part in gas exchange'",
+                30);
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find title of article",
+                30);
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find more button",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='Add to reading list']"),
+                "Cannot find option 'Add to reading list'",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'" + name_of_folder + "')]"),
+                "Cannot find folder '" + name_of_folder + "'",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'" + name_of_folder + "')]"),
+                "Cannot find folder '" + name_of_folder + "'",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot press close button",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
+                "Cannot find 'My lists' button",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'" + name_of_folder + "')]"),
+                "Cannot find folder '" + name_of_folder + "'",
+                15);
+
+        swipeElementToLeft(
+                first_article,
+                "Cannot find saved article 'Dead Space'");
+
+        waitForElementNotPresent(
+                first_article,
+                "Cannot delete saved article",
+                15);
+
+        waitForElementPresent(
+                second_article,
+                "The second article 'Dead space (physiology)' has not been preserved",
+                15);
+
+        waitForElementAndClick(
+                second_article,
+                "Cannot find 'Dead space (physiology)'",
+                15);
+
+        assertElementHasText(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Dead space (physiology)",
+                "We see unexpected text",
+                10);
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
