@@ -1,11 +1,11 @@
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ScreenOrientation;
@@ -21,7 +21,7 @@ public class FirstTest {
 
     private AppiumDriver driver;
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -36,7 +36,12 @@ public class FirstTest {
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
-    @After
+    @BeforeEach
+    public void screenOrientation() {
+        driver.rotate(ScreenOrientation.PORTRAIT);
+    }
+
+    @AfterAll
     public void tearDown() {
         driver.quit();
     }
@@ -157,9 +162,6 @@ public class FirstTest {
                 5);
     }
 
-
-    //lesson 4
-
     @Test
     public void testSwipeArticle() {
         waitForElementAndClick(
@@ -190,7 +192,7 @@ public class FirstTest {
     }
 
     @Test
-    public void saveFirstArticleToMyList() throws InterruptedException {
+    public void saveFirstArticleToMyList() {
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Search Wikipedia'");
@@ -719,8 +721,8 @@ public class FirstTest {
         return element.getAttribute(attribute);
     }
 
-    private void assertElementPresent(By by, String attribute, String error_message){
+    private void assertElementPresent(By by, String attribute, String error_message) {
         WebElement element = driver.findElement(by);
         Assert.assertNotNull(error_message, element.getAttribute(attribute));
-    };
+    }
 }
