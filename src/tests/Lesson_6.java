@@ -69,4 +69,17 @@ public class Lesson_6 extends CoreTestCase {
         ArticlePageObject articlePageObject = new ArticlePageObject(driver);
         articlePageObject.titleIsNotNull();
     }
+
+    //Ex9*: Рефакторинг темплейта
+    @Test
+    public void testSearchByTitleAndDescription(){
+        String search_line = "Meshuggah";
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine(search_line);
+
+        searchPageObject.waitForElementByTitleAndDescription("Meshuggah","Swedish metal band");
+        searchPageObject.waitForElementByTitleAndDescription("Meshuggah discography","Wikimedia band discography");
+        searchPageObject.waitForElementByTitleAndDescription("Meshuggah (EP)","1989 self-titled debut EP by Meshuggah");
+    }
 }

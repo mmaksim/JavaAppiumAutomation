@@ -13,7 +13,10 @@ public class SearchPageObject extends MainPageObject {
             SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
             SEARCH_RESULT_ELEMENT = "//*[@resource-id='org.wikipedia:id/page_list_item_container']",
             SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text='No results found']",
-            SEARCH_EMPTY_MESSAGE = "org.wikipedia:id/search_empty_message";
+            SEARCH_EMPTY_MESSAGE = "org.wikipedia:id/search_empty_message",
+            SEARCH_RESULT_BY_TITLE_AND_DESCRIPTION = "//*[@resource-id='org.wikipedia:id/page_list_item_container']" +
+                    "//*[@resource-id='org.wikipedia:id/page_list_item_title'][@text='{TITLE}']/" +
+                    "../*[@resource-id='org.wikipedia:id/page_list_item_description'][@text='{DESCRIPTION}']";
 
     public SearchPageObject(AppiumDriver driver) {
         super(driver);
@@ -37,6 +40,12 @@ public class SearchPageObject extends MainPageObject {
 
     private static String getResultSearchElementContains(String substring) {
         return SEARCH_RESULT_BY_SUBSTRING_CONTAINS_TPL.replace("{SUBSTRING}", substring);
+    }
+
+    private static String getResultSearchElementByTitleAndDescription(String title, String description) {
+        return SEARCH_RESULT_BY_TITLE_AND_DESCRIPTION
+                .replace("{TITLE}", title)
+                .replace("{DESCRIPTION}", description);
     }
     /* Template methods */
 
@@ -81,5 +90,11 @@ public class SearchPageObject extends MainPageObject {
     public void assertSearchResultIsMoreOrEqualThan(String substring, int compared) {
         String search_result_xpath = getResultSearchElementContains(substring);
         this.assertSearchResultIsMoreOrEqualThan(By.xpath(search_result_xpath), "Result of searching is empty", compared, 30);
+    }
+
+    public void waitForElementByTitleAndDescription(String title, String description) {
+        this.waitForElementPresent(By.xpath(getResultSearchElementByTitleAndDescription(title, description)),
+                "Cannot find search result by title '" + title + "' and description '" + description + "'",
+                15);
     }
 }

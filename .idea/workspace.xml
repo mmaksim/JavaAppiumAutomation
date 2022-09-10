@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dc3d6c9-a473-4ba9-b898-f88feb37b05a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lib/CoreTestCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/UI/ArticlePageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/UI/MainPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/UI/MyListPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/UI/NavigationUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/UI/SearchPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/ArticleTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/ChangeAppConditionTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/Lesson_6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/MyListTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/SearchTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaAppiumAutomation/FirstTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/UI/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/UI/SearchPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/Lesson_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Lesson_6.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,17 +54,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
-  <component name="RunManager" selected="JUnit.Lesson_6.testSaveTwoArticles">
-    <configuration name="FirstTest.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Lesson_6.testSearchByTitleAndDescription">
     <configuration name="FirstTest.testCheckSearchArticleInBackground" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="PACKAGE_NAME" value="" />
@@ -134,20 +113,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Lesson_6.testSearchByTitleAndDescription" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Lesson_6" />
+      <option name="METHOD_NAME" value="testSearchByTitleAndDescription" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
       <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
       <item itemvalue="JUnit.Lesson_6.testCancelTheSearch" />
       <item itemvalue="JUnit.Lesson_6.testCheckTitle" />
       <item itemvalue="JUnit.Lesson_6.testSaveTwoArticles" />
+      <item itemvalue="JUnit.Lesson_6.testSearchByTitleAndDescription" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Lesson_6.testSearchByTitleAndDescription" />
         <item itemvalue="JUnit.Lesson_6.testSaveTwoArticles" />
         <item itemvalue="JUnit.Lesson_6.testCheckTitle" />
         <item itemvalue="JUnit.Lesson_6.testCancelTheSearch" />
         <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
-        <item itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
       </list>
     </recent_temporary>
   </component>
