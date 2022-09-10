@@ -552,6 +552,29 @@ public class FirstTest {
                 10);
     }
 
+    @Test
+    public void testCheckTitle() {
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia'");
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Dead space",
+                "Cannot find search input");
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Video game series']"),
+                "Cannot find 'Object-oriented programming language'",
+                30);
+
+        assertElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
+                "text",
+                "title is not exist");
+
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -695,4 +718,9 @@ public class FirstTest {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         return element.getAttribute(attribute);
     }
+
+    private void assertElementPresent(By by, String attribute, String error_message){
+        WebElement element = driver.findElement(by);
+        Assert.assertNotNull(error_message, element.getAttribute(attribute));
+    };
 }
