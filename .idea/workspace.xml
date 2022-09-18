@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dc3d6c9-a473-4ba9-b898-f88feb37b05a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/java_client_7_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_websocket_api_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/UI/WelcomePageObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/iOSTestCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/iOS/GetStartedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/java_client_4_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/selenium_server_standalone_3_4_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/selenium_server_standalone_3_14_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAppiumAutomation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaAppiumAutomation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/java-client-4.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/selenium-server-standalone-3.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/CoreTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/CoreTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/UI/ArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/UI/ArticlePageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/UI/MainPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/UI/MainPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/UI/MyListPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/UI/MyListPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/UI/NavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/UI/NavigationUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/UI/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/UI/SearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/Lesson_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/Lesson_6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/ChangeAppConditionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ChangeAppConditionTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,101 +64,75 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
-  <component name="RunManager" selected="JUnit.Lesson_6.testSearchByTitleAndDescription">
-    <configuration name="FirstTest.testCheckSearchArticleInBackground" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lib.UI" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SearchTests.testSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SearchTests" />
+      <option name="METHOD_NAME" value="testSearch" />
+      <option name="TEST_OBJECT" value="method" />
+      <envs>
+        <env name="PLATFORM" value="android" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="JavaAppiumAutomation" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <envs>
+        <env name="PLATFORM" value="android" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testCheckSearchArticleInBackground" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <envs>
+        <env name="PLATFORM" value="android" />
+      </envs>
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Lesson_6.testCancelTheSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.Lesson_6" />
-      <option name="METHOD_NAME" value="testCancelTheSearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Lesson_6.testCheckTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.Lesson_6" />
-      <option name="METHOD_NAME" value="testCheckTitle" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Lesson_6.testSaveTwoArticles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.Lesson_6" />
-      <option name="METHOD_NAME" value="testSaveTwoArticles" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Lesson_6.testSearchByTitleAndDescription" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.Lesson_6" />
-      <option name="METHOD_NAME" value="testSearchByTitleAndDescription" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
-      <item itemvalue="JUnit.Lesson_6.testCancelTheSearch" />
-      <item itemvalue="JUnit.Lesson_6.testCheckTitle" />
-      <item itemvalue="JUnit.Lesson_6.testSaveTwoArticles" />
-      <item itemvalue="JUnit.Lesson_6.testSearchByTitleAndDescription" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Lesson_6.testSearchByTitleAndDescription" />
-        <item itemvalue="JUnit.Lesson_6.testSaveTwoArticles" />
-        <item itemvalue="JUnit.Lesson_6.testCheckTitle" />
-        <item itemvalue="JUnit.Lesson_6.testCancelTheSearch" />
-        <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
+        <item itemvalue="JUnit.SearchTests.testSearch" />
       </list>
     </recent_temporary>
   </component>
@@ -169,6 +159,11 @@
           <url>file://$PROJECT_DIR$/src/tests/Lesson_6.java</url>
           <line>29</line>
           <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/lib/CoreTestCase.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
